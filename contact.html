@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Taha Yawari</title>
+    <meta name="description" content="Get in touch with Taha Yawari for collaboration, projects, or just to say hi! Let's build something amazing together.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0a0a0f 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Animated Background Particles */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: #00ff88;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-20px) rotate(180deg); opacity: 1; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 255, 136, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #00ff88;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #00ff88;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #00ff88;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding-top: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #0066ff, #00ff88, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { filter: brightness(1); }
+            to { filter: brightness(1.2); }
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: #00ff88;
+            margin-bottom: 1rem;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: #ffffff;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #00ff88;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        /* Contact Layout */
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin: 4rem 0;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            background: rgba(42, 45, 58, 0.8);
+            padding: 3rem;
+            border-radius: 20px;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            backdrop-filter: blur(10px);
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            color: #0066ff;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            color: #00ff88;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-input, .form-textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #00ff88;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-input::placeholder, .form-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(45deg, #0066ff, #00ff88);
+            color: #ffffff;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Contact Info */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: rgba(42, 45, 58, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            border-color: #00ff88;
+            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.2);
+        }
+
+        .info-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            text-align: center;
+        }
+
+        .info-title {
+            font-size: 1.3rem;
+            color: #0066ff;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .info-description {
+            color: #ffffff;
+            opacity: 0.9;
+            line-height: 1.6;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .info-link {
+            display: block;
+            text-align: center;
+            color: #00ff88;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .info-link:hover {
+            color: #0066ff;
+        }
+
+        /* Social Links */
+        .social-section {
+            background: rgba(138, 43, 226, 0.2);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            text-align: center;
+        }
+
+        .social-title {
+            font-size: 2rem;
+            color: #8a2be2;
+            margin-bottom: 2rem;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .social-card {
+            background: rgba(42, 45, 58, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(138, 43, 226, 0.3);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .social-card:hover {
+            transform: translateY(-10px);
+            border-color: #8a2be2;
+            box-shadow: 0 20px 40px rgba(138, 43, 226, 0.3);
+        }
+
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .social-name {
+            font-size: 1.2rem;
+            color: #8a2be2;
+            margin-bottom: 0.5rem;
+        }
+
+        .social-description {
+            color: #ffffff;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Collaboration Section */
+        .collaboration-section {
+            margin: 4rem 0;
+        }
+
+        .collab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .collab-card {
+            background: rgba(42, 45, 58, 0.8);
+            padding: 2rem;
+            border-radius: 15px;
+            border-left: 4px solid #00ff88;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .collab-card:hover {
+            transform: translateX(10px);
+            background: rgba(42, 45, 58, 0.9);
+        }
+
+        .collab-title {
+            color: #00ff88;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .collab-description {
+            color: #ffffff;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Fun Actions */
+        .fun-actions {
+            background: linear-gradient(45deg, rgba(255, 107, 53, 0.2), rgba(255, 71, 87, 0.2));
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .fun-title {
+            font-size: 2rem;
+            color: #ff6b35;
+            margin-bottom: 2rem;
+        }
+
+        .fun-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .fun-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: linear-gradient(45deg, #ff6b35, #ff4757);
+            color: #ffffff;
+        }
+
+        .fun-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 107, 53, 0.3);
+        }
+
+        .fun-response {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            color: #ffffff;
+            opacity: 0.9;
+            min-height: 30px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .collab-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fun-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Animated Background Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Taha Yawari</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="learning.html">Learning</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="fun-zone.html">Fun Zone</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Let's Connect! 🤝</h1>
+            <p class="hero-subtitle">Ready to Build Something Amazing Together?</p>
+            <p class="hero-description">
+                Whether you want to collaborate on a project, ask questions about coding, or just say hi - 
+                I'd love to hear from you! Let's create something that helps people and makes the world a bit better.
+            </p>
+        </section>
+
+        <!-- Contact Layout -->
+        <div class="contact-layout">
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <h2 class="form-title">📧 Send Me a Message</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label class="form-label" for="name">Your Name</label>
+                        <input type="text" class="form-input" id="name" name="name" placeholder="What should I call you?" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Email Address</label>
+                        <input type="email" class="form-input" id="email" name="email" placeholder="your.email@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="subject">What's this about?</label>
+                        <select class="form-input" id="subject" name="subject" required>
+                            <option value="">Choose a topic...</option>
+                            <option value="collaboration">🤝 Project Collaboration</option>
+                            <option value="question">❓ Coding Question</option>
+                            <option value="feedback">💬 Website Feedback</option>
+                            <option value="learning">📚 Learning Together</option>
+                            <option value="just-hi">👋 Just Saying Hi!</option>
+                            <option value="other">🌟 Something Else</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">Your Message</label>
+                        <textarea class="form-textarea" id="message" name="message" placeholder="Tell me what's on your mind! Don't be shy - I love hearing from fellow creators and learners." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        🚀 Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <span class="info-icon">🏠</span>
+                    <h3 class="info-title">Location</h3>
+                    <p class="info-description">Australia 🇦🇺<br>Exploring tech Down Under!</p>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-icon">⚡</span>
+                    <h3 class="info-title">Response Time</h3>
+                    <p class="info-description">Usually within 24-48 hours<br>(Sometimes faster if I'm coding!)</p>
+                </div>
+
+                <div class="info-card">
+                    <span class="info-icon">🎯</span>
+                    <h3 class="info-title">Best For</h3>
+                    <p class="info-description">Project ideas, coding questions,<br>collaboration opportunities, or just chatting about tech!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social & Professional Links -->
+        <section class="social-section">
+            <h2 class="social-title">🌐 Find Me Online</h2>
+            <p style="color: #ffffff; opacity: 0.8; margin-bottom: 2rem;">
+                Connect with me on these platforms for updates, projects, and coding adventures!
+            </p>
+            <div class="social-grid">
+                <a href="#" class="social-card">
+                    <span class="social-icon">📚</span>
+                    <h3 class="social-name">GitHub</h3>
+                    <p class="social-description">Check out my code and projects</p>
+                </a>
+
+                <a href="#" class="social-card">
+                    <span class="social-icon">🎬</span>
+                    <h3 class="social-name">TahaGamingRealm</h3>
+                    <p class="social-description">My YouTube channel for gaming content</p>
+                </a>
+
+                <a href="index.html" class="social-card">
+                    <span class="social-icon">🌐</span>
+                    <h3 class="social-name">Personal Website</h3>
+                    <p class="social-description">You're here! My digital home</p>
+                </a>
+
+                <a href="blog.html" class="social-card">
+                    <span class="social-icon">📝</span>
+                    <h3 class="social-name">Tech Blog</h3>
+                    <p class="social-description">My thoughts and learning journey</p>
+                </a>
+            </div>
+        </section>
+
+        <!-- Collaboration Opportunities -->
+        <section class="collaboration-section">
+            <h2 class="section-title">🚀 Collaboration Ideas</h2>
+            <div class="collab-grid">
+                <div class="collab-card">
+                    <h3 class="collab-title">🤖 AI Projects</h3>
+                    <p class="collab-description">
+                        Want to build something cool with AI? I'm always excited to work on projects that use 
+                        AI to solve real problems or make people's lives easier.
+                    </p>
+                </div>
+
+                <div class="collab-card">
+                    <h3 class="collab-title">📚 Learning Together</h3>
+                    <p class="collab-description">
+                        Fellow young developer? Let's learn together! We can share resources, work on practice 
+                        projects, or help each other understand tricky concepts.
+                    </p>
+                </div>
+
+                <div class="collab-card">
+                    <h3 class="collab-title">🎮 Fun Projects</h3>
+                    <p class="collab-description">
+                        Games, interactive websites, creative coding experiments - if it's fun and teaches us 
+                        something new, I'm interested!
+                    </p>
+                </div>
+
+                <div class="collab-card">
+                    <h3 class="collab-title">🌟 Helpful Apps</h3>
+                    <p class="collab-description">
+                        Got an idea for an app that could help students, families, or communities? 
+                        Let's brainstorm and build it together!
+                    </p>
+                </div>
+
+                <div class="collab-card">
+                    <h3 class="collab-title">📖 Content Creation</h3>
+                    <p class="collab-description">
+                        Want to create tutorials, write blog posts, or make educational content for other 
+                        young developers? Count me in!
+                    </p>
+                </div>
+
+                <div class="collab-card">
+                    <h3 class="collab-title">🏫 School Projects</h3>
+                    <p class="collab-description">
+                        Need help with a school tech project? Or want to work together on something for 
+                        a science fair or coding club? Let's do it!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fun Interactive Section -->
+        <section class="fun-actions">
+            <h2 class="fun-title">🎉 Just for Fun</h2>
+            <p style="color: #ffffff; opacity: 0.8; margin-bottom: 2rem;">
+                Sometimes you just want to brighten someone's day! Try these fun actions:
+            </p>
+            <div class="fun-buttons">
+                <button class="fun-btn" onclick="sendHighFive()">🙏 Send High Five</button>
+                <button class="fun-btn" onclick="sendEncouragement()">💪 Send Encouragement</button>
+                <button class="fun-btn" onclick="shareCompliment()">🌟 Share Compliment</button>
+                <button class="fun-btn" onclick="sendMotivation()">🚀 Send Motivation</button>
+            </div>
+            <div class="fun-response" id="funResponse"></div>
+        </section>
+    </div>
+
+    <script>
+        // Create animated particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                
+                const colors = ['#00ff88', '#0066ff', '#8a2be2', '#ff6b35'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        window.addEventListener('load', createParticles);
+
+        // Contact Form Handling
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            
+            // Simulate form submission
+            submitBtn.disabled = true;
+            submitBtn.textContent = '📤 Sending...';
+            
+            setTimeout(() => {
+                submitBtn.textContent = '✅ Message Sent!';
+                
+                // Show success message
+                alert('Thanks for reaching out! Your message has been received. I\'ll get back to you soon! 😊');
+                
+                // Reset form
+                document.getElementById('contactForm').reset();
+                
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                }, 3000);
+            }, 2000);
+        });
+
+        // Fun Actions
+        const responses = {
+            highFive: [
+                "🙏 Virtual high five received! Right back at you! 🙏",
+                "✋ *SLAP!* That was a good one! Thanks for the high five! ✋",
+                "🎉 High five! You just made my day a little brighter! 🎉",
+                "💥 Epic high five! I can feel the energy from here! 💥"
+            ],
+            encouragement: [
+                "💪 Thanks for the encouragement! You're awesome too! 💪",
+                "🌟 Your support means a lot! Keep being amazing! 🌟",
+                "🚀 Encouragement received and sent right back! We've got this! 🚀",
+                "💖 You just brightened my day! Thanks for being so kind! 💖"
+            ],
+            compliment: [
+                "🌈 Thank you for the kind words! You seem pretty awesome yourself! 🌈",
+                "😊 That really made me smile! Compliments right back to you! 😊",
+                "✨ You're so thoughtful! Thanks for spreading positivity! ✨",
+                "🌟 Your kindness is contagious! Keep spreading those good vibes! 🌟"
+            ],
+            motivation: [
+                "🔥 Motivation received! Let's both keep chasing our dreams! 🔥",
+                "🎯 Thanks for the boost! Together we can achieve anything! 🎯",
+                "⚡ Your motivation is energizing! Let's build something amazing! ⚡",
+                "🚀 Motivation level: MAXIMUM! Thanks for the rocket fuel! 🚀"
+            ]
+        };
+
+        function sendHighFive() {
+            showFunResponse(responses.highFive);
+        }
+
+        function sendEncouragement() {
+            showFunResponse(responses.encouragement);
+        }
+
+        function shareCompliment() {
+            showFunResponse(responses.compliment);
+        }
+
+        function sendMotivation() {
+            showFunResponse(responses.motivation);
+        }
+
+        function showFunResponse(responseArray) {
+            const randomResponse = responseArray[Math.floor(Math.random() * responseArray.length)];
+            const responseElement = document.getElementById('funResponse');
+            
+            responseElement.style.opacity = '0';
+            setTimeout(() => {
+                responseElement.textContent = randomResponse;
+                responseElement.style.opacity = '1';
+            }, 200);
+        }
+
+        // Add hover effects to cards
+        document.querySelectorAll('.info-card, .social-card, .collab-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Form validation and enhancement
+        const formInputs = document.querySelectorAll('.form-input, .form-textarea');
+        formInputs.forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.style.transform = 'scale(1.02)';
+            });
+            
+            input.addEventListener('blur', function() {
+                this.parentElement.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
