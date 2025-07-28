@@ -158,6 +158,59 @@
             margin-bottom: 3rem;
         }
 
+        /* Daily Challenge */
+        .daily-challenge {
+            background: rgba(138, 43, 226, 0.2);
+            padding: 3rem;
+            border-radius: 20px;
+            margin: 4rem 0;
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            text-align: center;
+        }
+
+        .challenge-header {
+            margin-bottom: 2rem;
+        }
+
+        .challenge-title {
+            font-size: 2rem;
+            color: #8a2be2;
+            margin-bottom: 1rem;
+        }
+
+        .challenge-difficulty {
+            background: #ff6b35;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        .challenge-code {
+            background: #0a0a0f;
+            padding: 2rem;
+            border-radius: 15px;
+            font-family: 'Courier New', monospace;
+            color: #00ff88;
+            margin: 2rem 0;
+            border: 2px solid rgba(0, 255, 136, 0.3);
+            text-align: left;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .code-output {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 255, 136, 0.2);
+            margin-top: 1rem;
+            font-family: 'Courier New', monospace;
+            color: #ffffff;
+            min-height: 60px;
+        }
+
         /* Games Grid */
         .games-grid {
             display: grid;
@@ -272,75 +325,6 @@
             transform: none;
         }
 
-        /* Daily Challenge */
-        .daily-challenge {
-            background: rgba(138, 43, 226, 0.2);
-            padding: 3rem;
-            border-radius: 20px;
-            margin: 4rem 0;
-            border: 2px solid rgba(138, 43, 226, 0.5);
-            text-align: center;
-        }
-
-        .challenge-header {
-            margin-bottom: 2rem;
-        }
-
-        .challenge-title {
-            font-size: 2rem;
-            color: #8a2be2;
-            margin-bottom: 1rem;
-        }
-
-        .challenge-difficulty {
-            background: #ff6b35;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 1rem;
-            display: inline-block;
-        }
-
-        .challenge-code {
-            background: #0a0a0f;
-            padding: 2rem;
-            border-radius: 15px;
-            font-family: 'Courier New', monospace;
-            color: #00ff88;
-            margin: 2rem 0;
-            border: 2px solid rgba(0, 255, 136, 0.3);
-            text-align: left;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .code-output {
-            background: rgba(0, 0, 0, 0.5);
-            padding: 1rem;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 255, 136, 0.2);
-            margin-top: 1rem;
-            font-family: 'Courier New', monospace;
-            color: #ffffff;
-            min-height: 60px;
-        }
-
-        /* Joke Generator */
-        .joke-display {
-            background: rgba(255, 107, 53, 0.1);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 2px solid rgba(255, 107, 53, 0.3);
-            margin: 1rem 0;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            min-height: 100px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-        }
-
         /* Stats Display */
         .stats-display {
             display: grid;
@@ -368,6 +352,172 @@
             color: #ffffff;
             opacity: 0.8;
             font-size: 0.9rem;
+        }
+
+        /* Poison Dot Game Specific Styles */
+        .poison-game-container {
+            width: 100%;
+        }
+
+        .poison-setup {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            text-align: center;
+        }
+
+        .poison-mode-buttons {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .poison-series-score {
+            background: rgba(138, 43, 226, 0.2);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(138, 43, 226, 0.5);
+            text-align: center;
+        }
+
+        .poison-game-status {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid rgba(255, 107, 53, 0.3);
+        }
+
+        .poison-series-winner {
+            background: linear-gradient(45deg, #ff6b35, #8a2be2);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 1rem 0;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1.2rem;
+            animation: celebration 2s infinite;
+        }
+
+        @keyframes celebration {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .poison-current-player {
+            color: #ff6b35;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .poison-game-phase {
+            color: #ffffff;
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .poison-game-controls {
+            margin: 1rem 0;
+        }
+
+        .poison-dots-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            grid-template-rows: repeat(5, 1fr) !important;
+            gap: 15px !important;
+            margin: 1rem auto !important;
+            padding: 2rem !important;
+            background: rgba(0, 0, 0, 0.2) !important;
+            border-radius: 10px !important;
+            width: 100% !important;
+            max-width: 350px !important;
+            justify-content: center !important;
+            align-content: center !important;
+            grid-auto-flow: row !important;
+        }
+
+        .poison-dot {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #333, #555);
+            border: 2px solid #00ff88;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: white;
+            margin: 0 auto;
+        }
+
+        .poison-dot:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        .poison-dot.clicked {
+            background: linear-gradient(45deg, #0066ff, #00ff88);
+            border-color: #0066ff;
+            cursor: not-allowed;
+        }
+
+        .poison-dot.poison {
+            background: linear-gradient(45deg, #ff4757, #ff6b35) !important;
+            animation: poisonPulse 1s infinite;
+        }
+
+        @keyframes poisonPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .poison-winner {
+            background: linear-gradient(45deg, #00ff88, #0066ff);
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .poison-screen-blocker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .poison-blocker-content {
+            background: rgba(42, 45, 58, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid #ff6b35;
+        }
+
+        .poison-blocker-title {
+            font-size: 1.5rem;
+            color: #ff6b35;
+            margin-bottom: 1rem;
+        }
+
+        .poison-blocker-text {
+            color: #ffffff;
+            opacity: 0.9;
         }
 
         /* Reaction Game */
@@ -403,6 +553,22 @@
             50% { transform: scale(1.05); }
         }
 
+        /* Joke Generator */
+        .joke-display {
+            background: rgba(255, 107, 53, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 107, 53, 0.3);
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
         /* Mobile Responsive */
         @media (max-width: 768px) {
             .nav-links {
@@ -419,6 +585,18 @@
 
             .stats-display {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .poison-dots-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+                padding: 1rem;
+            }
+            
+            .poison-dot {
+                width: 35px;
+                height: 35px;
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -442,41 +620,7 @@
             </ul>
         </div>
     </nav>
-<!-- Poison Dot Game -->
-<div class="game-card">
-    <span class="game-icon">💀</span>
-    <h3 class="game-title">Poison Dot Game</h3>
-    <p class="game-description">Strategic 1v1 battle! Each player picks a secret poison dot, then take turns clicking. Don't hit your opponent's poison!</p>
-    <div class="game-interface">
-        <div class="poison-game-container" id="poisonGameContainer">
-            <div class="poison-game-status" id="poisonStatus">
-                <div class="poison-current-player" id="poisonCurrentPlayer">Click "Start Game" to begin!</div>
-                <div class="poison-game-phase" id="poisonGamePhase">Ready to play</div>
-            </div>
-            
-            <div class="poison-game-controls">
-                <button class="btn btn-primary" onclick="startPoisonGame()">🚀 Start Game</button>
-                <button class="btn btn-secondary" onclick="resetPoisonGame()">🔄 Reset</button>
-            </div>
-            
-            <div class="poison-dots-grid" id="poisonDotsGrid">
-                <!-- Dots will be generated by JavaScript -->
-            </div>
-            
-            <div class="poison-winner" id="poisonWinner" style="display: none;"></div>
-        </div>
-    </div>
-    <div class="stats-display">
-        <div class="stat-item">
-            <div class="stat-number" id="poisonGamesPlayed">0</div>
-            <div class="stat-label">Games Played</div>
-        </div>
-        <div class="stat-item">
-            <div class="stat-number" id="poisonWins">0</div>
-            <div class="stat-label">Wins</div>
-        </div>
-    </div>
-</div>
+
     <div class="main-content">
         <!-- Hero Section -->
         <section class="hero">
@@ -519,6 +663,66 @@ print(f"The largest number is: {result}")
         <section class="games-section">
             <h2 class="section-title">🎮 Interactive Games</h2>
             <div class="games-grid">
+
+                <!-- Poison Dot Game - NEW GAME! -->
+                <div class="game-card">
+                    <span class="game-icon">💀</span>
+                    <h3 class="game-title">Poison Dot Game</h3>
+                    <p class="game-description">Strategic 1v1 battle! Each player picks a secret poison dot, then take turns clicking. Don't hit your opponent's poison!</p>
+                    <div class="game-interface">
+                        <div class="poison-game-container" id="poisonGameContainer">
+                            
+                            <!-- Game Setup -->
+                            <div class="poison-setup" id="poisonSetup">
+                                <h4 style="color: #00ff88; margin-bottom: 1rem;">Choose Game Mode:</h4>
+                                <div class="poison-mode-buttons">
+                                    <button class="btn btn-secondary" onclick="selectGameMode(3)">Best of 3</button>
+                                    <button class="btn btn-secondary" onclick="selectGameMode(5)">Best of 5</button>
+                                    <button class="btn btn-secondary" onclick="selectGameMode(7)">Best of 7</button>
+                                </div>
+                            </div>
+
+                            <!-- Series Score -->
+                            <div class="poison-series-score" id="poisonSeriesScore" style="display: none;">
+                                <h4 style="color: #8a2be2; margin-bottom: 0.5rem;">Series Score</h4>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 1rem;">
+                                    <div>Player 1: <span id="p1SeriesWins" style="color: #00ff88; font-weight: bold;">0</span></div>
+                                    <div>Player 2: <span id="p2SeriesWins" style="color: #0066ff; font-weight: bold;">0</span></div>
+                                </div>
+                                <div style="color: #ffffff; opacity: 0.8;">
+                                    Round <span id="currentRound">1</span> of <span id="totalRounds">3</span>
+                                </div>
+                            </div>
+                            
+                            <div class="poison-game-status" id="poisonStatus" style="display: none;">
+                                <div class="poison-current-player" id="poisonCurrentPlayer">Click "Start Game" to begin!</div>
+                                <div class="poison-game-phase" id="poisonGamePhase">Ready to play</div>
+                            </div>
+                            
+                            <div class="poison-game-controls">
+                                <button class="btn btn-primary" id="poisonStartBtn" onclick="startPoisonRound()" style="display: none;">🚀 Start Round</button>
+                                <button class="btn btn-secondary" onclick="resetPoisonSeries()">🔄 Reset Series</button>
+                            </div>
+                            
+                            <div class="poison-dots-grid" id="poisonDotsGrid" style="display: none;">
+                                <!-- Dots will be generated by JavaScript -->
+                            </div>
+                            
+                            <div class="poison-winner" id="poisonWinner" style="display: none;"></div>
+                            <div class="poison-series-winner" id="poisonSeriesWinner" style="display: none;"></div>
+                        </div>
+                    </div>
+                    <div class="stats-display">
+                        <div class="stat-item">
+                            <div class="stat-number" id="poisonSeriesPlayed">0</div>
+                            <div class="stat-label">Series Played</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number" id="poisonTotalWins">0</div>
+                            <div class="stat-label">Total Wins</div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Click Counter Game -->
                 <div class="game-card">
@@ -674,8 +878,25 @@ print(f"The largest number is: {result}")
         let reactionStartTime = 0;
         let reactionTimeout;
 
-        // Load stats from localStorage (but remember: we can't actually use localStorage in Claude.ai)
-        // So we'll just keep stats for the current session
+        // Poison Game State
+        let poisonGameState = {
+            phase: 'setup', // setup, poison-selection, playing, round-ended, series-ended
+            currentPlayer: 1,
+            player1Poison: null,
+            player2Poison: null,
+            clickedDots: [],
+            players: ['Player 1', 'Player 2'],
+            
+            // Series tracking
+            gameMode: null, // 3, 5, or 7
+            currentRound: 1,
+            player1SeriesWins: 0,
+            player2SeriesWins: 0,
+            seriesPlayed: 0,
+            totalWins: 0
+        };
+
+        // Load stats from memory for current session
         let stats = {
             clickHighScore: 0,
             clickGamesPlayed: 0,
@@ -711,6 +932,391 @@ print(f"The largest number is: {result}")
                 <div>4. Return the largest number found</div>
                 <div style="color: #00ff88; margin-top: 0.5rem;">Alternative: Use Python's built-in max() function!</div>
             `;
+        }
+
+        // Poison Dot Game Functions
+        function selectGameMode(mode) {
+            poisonGameState.gameMode = mode;
+            poisonGameState.phase = 'series-ready';
+            poisonGameState.currentRound = 1; // Reset to round 1
+            
+            // Hide setup, show series score and start button
+            document.getElementById('poisonSetup').style.display = 'none';
+            document.getElementById('poisonSeriesScore').style.display = 'block';
+            document.getElementById('poisonStartBtn').style.display = 'inline-block';
+            document.getElementById('poisonStartBtn').textContent = '🚀 Start Round 1'; // Always start with Round 1
+            document.getElementById('totalRounds').textContent = mode;
+            
+            resetSeriesScore();
+            updatePoisonDisplay();
+        }
+
+        function resetSeriesScore() {
+            poisonGameState.currentRound = 1;
+            poisonGameState.player1SeriesWins = 0;
+            poisonGameState.player2SeriesWins = 0;
+            
+            document.getElementById('currentRound').textContent = poisonGameState.currentRound;
+            document.getElementById('p1SeriesWins').textContent = poisonGameState.player1SeriesWins;
+            document.getElementById('p2SeriesWins').textContent = poisonGameState.player2SeriesWins;
+        }
+
+        function startPoisonRound() {
+            poisonGameState.phase = 'poison-selection';
+            poisonGameState.currentPlayer = 1; // Always start with Player 1
+            poisonGameState.player1Poison = null;
+            poisonGameState.player2Poison = null;
+            poisonGameState.clickedDots = [];
+            
+            // Show game elements
+            document.getElementById('poisonStatus').style.display = 'block';
+            document.getElementById('poisonDotsGrid').style.display = 'block';
+            document.getElementById('poisonWinner').style.display = 'none';
+            document.getElementById('poisonSeriesWinner').style.display = 'none';
+            document.getElementById('poisonStartBtn').style.display = 'none';
+            
+            createPoisonDots();
+            updatePoisonDisplay();
+        }
+
+        function initializePoisonGame() {
+            // Show initial setup
+            document.getElementById('poisonSetup').style.display = 'block';
+            document.getElementById('poisonSeriesScore').style.display = 'none';
+            document.getElementById('poisonStatus').style.display = 'none';
+            document.getElementById('poisonDotsGrid').style.display = 'none';
+        }
+
+        function createPoisonDots() {
+            const grid = document.getElementById('poisonDotsGrid');
+            grid.innerHTML = '';
+            
+            for (let i = 1; i <= 15; i++) {
+                const dot = document.createElement('div');
+                dot.className = 'poison-dot';
+                dot.id = `poison-dot-${i}`;
+                dot.textContent = i;
+                dot.onclick = () => handlePoisonDotClick(i);
+                grid.appendChild(dot);
+            }
+        }
+
+        function startPoisonGame() {
+            poisonGameState = {
+                ...poisonGameState,
+                phase: 'poison-selection',
+                currentPlayer: Math.random() < 0.5 ? 1 : 2,
+                player1Poison: null,
+                player2Poison: null,
+                clickedDots: []
+            };
+            
+            createPoisonDots();
+            updatePoisonDisplay();
+            
+            document.getElementById('poisonGamePhase').textContent = 
+                `${poisonGameState.players[poisonGameState.currentPlayer - 1]} will choose their poison dot first!`;
+            
+            if (poisonGameState.currentPlayer === 2) {
+                showPoisonScreenBlocker();
+            }
+        }
+
+        function handlePoisonDotClick(dotNumber) {
+            const dot = document.getElementById(`poison-dot-${dotNumber}`);
+            
+            if (poisonGameState.phase === 'poison-selection') {
+                handlePoisonSelection(dotNumber, dot);
+            } else if (poisonGameState.phase === 'playing') {
+                handlePoisonGamePlay(dotNumber, dot);
+            }
+        }
+
+        function handlePoisonSelection(dotNumber, dot) {
+            if (poisonGameState.currentPlayer === 1 && poisonGameState.player1Poison === null) {
+                poisonGameState.player1Poison = dotNumber;
+                dot.style.border = '2px solid #ff4757';
+                
+                // Hide the red border after 1 second so P2 can't see it
+                setTimeout(() => {
+                    dot.style.border = '2px solid #00ff88'; // Back to normal
+                }, 1000);
+                
+                // Switch to Player 2
+                poisonGameState.currentPlayer = 2;
+                updatePoisonDisplay();
+                
+            } else if (poisonGameState.currentPlayer === 2 && poisonGameState.player2Poison === null) {
+                poisonGameState.player2Poison = dotNumber;
+                dot.style.border = '2px solid #ff4757';
+                
+                // Hide the red border after 1 second so P1 can't see it
+                setTimeout(() => {
+                    dot.style.border = '2px solid #00ff88'; // Back to normal
+                }, 1000);
+                
+                // Both players have selected, start the game after the border fades
+                setTimeout(() => {
+                    startPoisonPlaying();
+                }, 1500); // Wait a bit longer so the red fades first
+            }
+        }
+
+        function startPoisonPlaying() {
+            poisonGameState.phase = 'playing';
+            poisonGameState.currentPlayer = Math.random() < 0.5 ? 1 : 2; // Random first player for gameplay
+            
+            createPoisonDots(); // Reset the grid (remove poison indicators)
+            updatePoisonDisplay();
+        }
+
+        function endPoisonRound(winner, poisonDot = null) {
+            poisonGameState.phase = 'round-ended';
+            
+            // Update series score
+            if (winner === 1) {
+                poisonGameState.player1SeriesWins++;
+            } else if (winner === 2) {
+                poisonGameState.player2SeriesWins++;
+            }
+            
+            // Reveal poison dots
+            if (poisonGameState.player1Poison) {
+                const p1Dot = document.getElementById(`poison-dot-${poisonGameState.player1Poison}`);
+                p1Dot.classList.add('poison');
+                p1Dot.textContent = '💀';
+            }
+            
+            if (poisonGameState.player2Poison) {
+                const p2Dot = document.getElementById(`poison-dot-${poisonGameState.player2Poison}`);
+                p2Dot.classList.add('poison');
+                p2Dot.textContent = '💀';
+            }
+            
+            // Show round result
+            const winnerEl = document.getElementById('poisonWinner');
+            winnerEl.style.display = 'block';
+            
+            if (winner) {
+                winnerEl.innerHTML = `🎉 ${poisonGameState.players[winner - 1]} WINS ROUND ${poisonGameState.currentRound}! 🎉<br>Poison was dot ${poisonDot}!`;
+            } else {
+                winnerEl.innerHTML = `🤝 ROUND ${poisonGameState.currentRound} TIE! All safe dots clicked! 🤝`;
+            }
+            
+            // Update series display
+            document.getElementById('p1SeriesWins').textContent = poisonGameState.player1SeriesWins;
+            document.getElementById('p2SeriesWins').textContent = poisonGameState.player2SeriesWins;
+            
+            // Check if series is complete
+            const winsNeeded = Math.ceil(poisonGameState.gameMode / 2);
+            
+            if (poisonGameState.player1SeriesWins >= winsNeeded) {
+                endPoisonSeries(1);
+            } else if (poisonGameState.player2SeriesWins >= winsNeeded) {
+                endPoisonSeries(2);
+            } else {
+                // Continue to next round
+                poisonGameState.currentRound++;
+                document.getElementById('currentRound').textContent = poisonGameState.currentRound;
+                
+                // Show start button for next round with correct round number
+                setTimeout(() => {
+                    document.getElementById('poisonStartBtn').style.display = 'inline-block';
+                    document.getElementById('poisonStartBtn').textContent = `🚀 Start Round ${poisonGameState.currentRound}`;
+                }, 3000);
+            }
+            
+            updatePoisonDisplay();
+        }
+
+        function endPoisonSeries(seriesWinner) {
+            poisonGameState.phase = 'series-ended';
+            poisonGameState.seriesPlayed++;
+            poisonGameState.totalWins++;
+            
+            const seriesWinnerEl = document.getElementById('poisonSeriesWinner');
+            seriesWinnerEl.style.display = 'block';
+            seriesWinnerEl.innerHTML = `
+                🏆 ${poisonGameState.players[seriesWinner - 1]} WINS THE SERIES! 🏆<br>
+                Final Score: ${poisonGameState.player1SeriesWins} - ${poisonGameState.player2SeriesWins}<br>
+                Best of ${poisonGameState.gameMode} Complete!
+            `;
+            
+            // Update stats
+            document.getElementById('poisonSeriesPlayed').textContent = poisonGameState.seriesPlayed;
+            document.getElementById('poisonTotalWins').textContent = poisonGameState.totalWins;
+            updateTotalGamesPlayed();
+            
+            // Show reset button for new series
+            setTimeout(() => {
+                document.getElementById('poisonStartBtn').style.display = 'none';
+            }, 1000);
+        }
+
+        function showPoisonScreenBlocker(blockedPlayer, message) {
+            if (!document.getElementById('poisonScreenBlocker')) {
+                const blocker = document.createElement('div');
+                blocker.id = 'poisonScreenBlocker';
+                blocker.className = 'poison-screen-blocker';
+                document.body.appendChild(blocker);
+            }
+            
+            const blocker = document.getElementById('poisonScreenBlocker');
+            blocker.innerHTML = `
+                <div class="poison-blocker-content">
+                    <h2 class="poison-blocker-title">🙈 ${blockedPlayer} LOOK AWAY!</h2>
+                    <p class="poison-blocker-text">${message}</p>
+                    <p class="poison-blocker-text">Don't peek! 👀</p>
+                </div>
+            `;
+            blocker.style.display = 'flex';
+        }
+
+        function resetPoisonSeries() {
+            poisonGameState = {
+                phase: 'setup',
+                currentPlayer: 1,
+                player1Poison: null,
+                player2Poison: null,
+                clickedDots: [],
+                players: ['Player 1', 'Player 2'],
+                gameMode: null,
+                currentRound: 1, // Always reset to round 1
+                player1SeriesWins: 0,
+                player2SeriesWins: 0,
+                seriesPlayed: poisonGameState.seriesPlayed,
+                totalWins: poisonGameState.totalWins
+            };
+            
+            // Reset display
+            document.getElementById('poisonSetup').style.display = 'block';
+            document.getElementById('poisonSeriesScore').style.display = 'none';
+            document.getElementById('poisonStatus').style.display = 'none';
+            document.getElementById('poisonDotsGrid').style.display = 'none';
+            document.getElementById('poisonWinner').style.display = 'none';
+            document.getElementById('poisonSeriesWinner').style.display = 'none';
+            document.getElementById('poisonStartBtn').style.display = 'none';
+            
+            // Reset button text
+            document.getElementById('poisonStartBtn').textContent = '🚀 Start Round';
+        }
+
+        function handlePoisonGamePlay(dotNumber, dot) {
+            if (poisonGameState.clickedDots.includes(dotNumber)) {
+                return;
+            }
+            
+            const opponentPoison = poisonGameState.currentPlayer === 1 ? poisonGameState.player2Poison : poisonGameState.player1Poison;
+            
+            if (dotNumber === opponentPoison) {
+                endPoisonRound(poisonGameState.currentPlayer === 1 ? 2 : 1, dotNumber);
+                return;
+            }
+            
+            poisonGameState.clickedDots.push(dotNumber);
+            dot.classList.add('clicked');
+            dot.textContent = '✓';
+            
+            poisonGameState.currentPlayer = poisonGameState.currentPlayer === 1 ? 2 : 1;
+            updatePoisonDisplay();
+            
+            if (poisonGameState.clickedDots.length === 13) {
+                endPoisonRound(null);
+            }
+        }
+
+        function endPoisonGame(winner, poisonDot = null) {
+            poisonGameState.phase = 'ended';
+            poisonGameState.gamesPlayed++;
+            
+            if (winner) {
+                poisonGameState.wins++;
+            }
+            
+            // Reveal poison dots
+            if (poisonGameState.player1Poison) {
+                const p1Dot = document.getElementById(`poison-dot-${poisonGameState.player1Poison}`);
+                p1Dot.classList.add('poison');
+                p1Dot.textContent = '💀';
+            }
+            
+            if (poisonGameState.player2Poison) {
+                const p2Dot = document.getElementById(`poison-dot-${poisonGameState.player2Poison}`);
+                p2Dot.classList.add('poison');
+                p2Dot.textContent = '💀';
+            }
+            
+            const winnerEl = document.getElementById('poisonWinner');
+            winnerEl.style.display = 'block';
+            
+            if (winner) {
+                winnerEl.innerHTML = `🎉 ${poisonGameState.players[winner - 1]} WINS! 🎉<br>Poison was dot ${poisonDot}!`;
+            } else {
+                winnerEl.innerHTML = `🤝 It's a TIE! All safe dots clicked! 🤝`;
+            }
+            
+            // Update stats
+            document.getElementById('poisonGamesPlayed').textContent = poisonGameState.gamesPlayed;
+            document.getElementById('poisonWins').textContent = poisonGameState.wins;
+            updateTotalGamesPlayed();
+            
+            updatePoisonDisplay();
+        }
+
+        function showPoisonScreenBlocker() {
+            if (!document.getElementById('poisonScreenBlocker')) {
+                const blocker = document.createElement('div');
+                blocker.id = 'poisonScreenBlocker';
+                blocker.className = 'poison-screen-blocker';
+                blocker.innerHTML = `
+                    <div class="poison-blocker-content">
+                        <h2 class="poison-blocker-title">🙈 Screen Blocked!</h2>
+                        <p class="poison-blocker-text">The other player is choosing their poison...</p>
+                        <p class="poison-blocker-text">Please look away!</p>
+                    </div>
+                `;
+                document.body.appendChild(blocker);
+            }
+            document.getElementById('poisonScreenBlocker').style.display = 'flex';
+        }
+
+        function hidePoisonScreenBlocker() {
+            const blocker = document.getElementById('poisonScreenBlocker');
+            if (blocker) {
+                blocker.style.display = 'none';
+            }
+        }
+
+        function updatePoisonDisplay() {
+            const currentPlayerEl = document.getElementById('poisonCurrentPlayer');
+            const gamePhaseEl = document.getElementById('poisonGamePhase');
+            
+            if (poisonGameState.phase === 'setup') {
+                currentPlayerEl.textContent = 'Click "Start Game" to begin!';
+                gamePhaseEl.textContent = 'Ready to play';
+            } else if (poisonGameState.phase === 'poison-selection') {
+                currentPlayerEl.textContent = `${poisonGameState.players[poisonGameState.currentPlayer - 1]}'s Turn`;
+                gamePhaseEl.textContent = 'Choose your poison dot (other player look away!)';
+            } else if (poisonGameState.phase === 'playing') {
+                currentPlayerEl.textContent = `${poisonGameState.players[poisonGameState.currentPlayer - 1]}'s Turn`;
+                gamePhaseEl.textContent = 'Click a dot - avoid the poison!';
+            } else if (poisonGameState.phase === 'ended') {
+                currentPlayerEl.textContent = 'Game Over!';
+                gamePhaseEl.textContent = 'Click "Start Game" to play again';
+            }
+        }
+
+        function resetPoisonGame() {
+            poisonGameState.phase = 'setup';
+            poisonGameState.currentPlayer = 1;
+            poisonGameState.player1Poison = null;
+            poisonGameState.player2Poison = null;
+            poisonGameState.clickedDots = [];
+            
+            document.getElementById('poisonWinner').style.display = 'none';
+            hidePoisonScreenBlocker();
+            createPoisonDots();
+            updatePoisonDisplay();
         }
 
         // Click Game Functions
@@ -882,42 +1488,35 @@ print(f"The largest number is: {result}")
             "Why don't elephants use computers? They're afraid of the mouse! 🐘"
         ];
 
-        let remainingJokes = [...allJokes]; // Copy of all jokes
-        let usedJokes = []; // Track used jokes
+        let remainingJokes = [...allJokes];
+        let usedJokes = [];
 
         function getRandomJoke() {
-            // If no jokes left, reset the pool
             if (remainingJokes.length === 0) {
                 remainingJokes = [...allJokes];
                 usedJokes = [];
-                // Show a special message when cycling through
                 document.getElementById('jokeDisplay').innerHTML = 
                     "🎉 You've heard all my jokes! Starting over with fresh ones...";
                 setTimeout(() => {
-                    getRandomJoke(); // Get a new joke after showing the message
+                    getRandomJoke();
                 }, 2000);
                 return;
             }
             
-            // Pick a random joke from remaining jokes
             const randomIndex = Math.floor(Math.random() * remainingJokes.length);
             const joke = remainingJokes[randomIndex];
             
-            // Remove the joke from remaining and add to used
             remainingJokes.splice(randomIndex, 1);
             usedJokes.push(joke);
             
-            // Display the joke
             document.getElementById('jokeDisplay').textContent = joke;
             
-            // Update stats
             stats.jokesShown++;
             stats.laughsGenerated++;
             document.getElementById('jokesShown').textContent = stats.jokesShown;
             document.getElementById('laughsGenerated').textContent = stats.laughsGenerated;
             updateStats();
             
-            // Update button text to show remaining jokes
             const remainingCount = remainingJokes.length;
             const button = document.querySelector('button[onclick="getRandomJoke()"]');
             if (remainingCount > 0) {
@@ -934,7 +1533,6 @@ print(f"The largest number is: {result}")
                 return;
             }
             
-            // Simple share functionality
             if (navigator.share) {
                 navigator.share({
                     title: 'Fun Joke from Taha\'s Fun Zone',
@@ -942,7 +1540,6 @@ print(f"The largest number is: {result}")
                     url: window.location.href
                 });
             } else {
-                // Fallback: copy to clipboard
                 navigator.clipboard.writeText(joke).then(() => {
                     alert("Joke copied to clipboard! Share it with your friends! 📋");
                 }).catch(() => {
@@ -951,10 +1548,14 @@ print(f"The largest number is: {result}")
             }
         }
 
+        function updateTotalGamesPlayed() {
+            stats.totalGamesPlayed = stats.clickGamesPlayed + stats.guessWins + stats.reactionTests + poisonGameState.gamesPlayed;
+            updateStats();
+        }
+
         // Update Stats Function
         function updateStats() {
             document.getElementById('totalGamesPlayed').textContent = stats.totalGamesPlayed;
-            // Simulate time spent playing (just for fun)
             stats.timeSpentPlaying = Math.floor(stats.totalGamesPlayed * 2.5);
             document.getElementById('timeSpentPlaying').textContent = stats.timeSpentPlaying;
             document.getElementById('challengesCompleted').textContent = stats.challengesCompleted;
@@ -969,7 +1570,6 @@ print(f"The largest number is: {result}")
 
         // Initialize the page
         function initializePage() {
-            // Set initial values
             document.getElementById('clickHighScore').textContent = stats.clickHighScore;
             document.getElementById('clickGamesPlayed').textContent = stats.clickGamesPlayed;
             document.getElementById('guessAttempts').textContent = guessAttempts;
@@ -979,49 +1579,17 @@ print(f"The largest number is: {result}")
             document.getElementById('jokesShown').textContent = stats.jokesShown;
             document.getElementById('laughsGenerated').textContent = stats.laughsGenerated;
             
-            // Initialize joke button with count
             const jokeButton = document.querySelector('button[onclick="getRandomJoke()"]');
             jokeButton.textContent = `😂 Get Joke (${remainingJokes.length} available)`;
             
+            initializePoisonGame();
             updateStats();
         }
 
         // Start the page
         window.addEventListener('load', initializePage);
 
-        // Easter Egg: Konami Code
-        const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-        let konamiIndex = 0;
-
-        document.addEventListener('keydown', function(e) {
-            if (e.keyCode === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    // Easter egg activated!
-                    document.body.style.background = 'linear-gradient(45deg, #ff6b35, #f7931e, #ffd700, #00ff88, #0066ff, #8a2be2)';
-                    document.body.style.backgroundSize = '400% 400%';
-                    document.body.style.animation = 'rainbow 3s ease infinite';
-                    
-                    // Add rainbow animation
-                    const style = document.createElement('style');
-                    style.textContent = `
-                        @keyframes rainbow {
-                            0% { background-position: 0% 50%; }
-                            50% { background-position: 100% 50%; }
-                            100% { background-position: 0% 50%; }
-                        }
-                    `;
-                    document.head.appendChild(style);
-                    
-                    alert("🌈 RAINBOW MODE ACTIVATED! You found the secret Konami Code! 🎉");
-                    konamiIndex = 0;
-                }
-            } else {
-                konamiIndex = 0;
-            }
-        });
-
-        // Add some hover effects to game cards
+        // Add hover effects to game cards
         document.querySelectorAll('.game-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
                 this.style.transform = 'translateY(-15px) scale(1.02)';
